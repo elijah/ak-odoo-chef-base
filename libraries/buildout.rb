@@ -16,8 +16,8 @@ class Chef
     class Buildout < Chef::Provider
 
       include ::Chef::Mixin::ShellOut
-      #include Chef::DSL::Recipe
-      #include Chef::Mixin::FromFile
+      include Chef::DSL::Recipe
+      include Chef::Mixin::FromFile
 
       attr_reader :scm_provider
 
