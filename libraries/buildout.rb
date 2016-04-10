@@ -1,6 +1,8 @@
+
 require 'chef/exceptions'
 require 'chef/log'
 require 'chef/provider'
+require 'chef/provider/cookbook_file'
 require 'chef/mixin/shell_out'
 require 'fileutils'
 require_relative 'configparser'

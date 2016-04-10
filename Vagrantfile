@@ -14,7 +14,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  # config.berkshelf.enabled = true
+  config.berkshelf.enabled = true
   # The path to the Berksfile to use with Vagrant Berkshelf
   # config.berkshelf.berksfile_path = "./Berksfile"
 
@@ -29,7 +29,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 #  config.vm.customize ["modifyvm", :id, "--cpus", 2]
 #  config.vm.customize ["modifyvm", :id, "--memory", 1024]
       
-  config.vm.host_name = "vodoo"
+  config.vm.host_name = "voodoo"
 
 #  config.vm.box = "fgrehm/precise32-lxc"
   config.vm.box = "ubuntu/trusty64"
@@ -86,7 +86,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           super_user:     {"unix_user" => "vagrant"},
           prod:           {"unix_user" => "vagrant"},
           dev:            {"unix_user" => "vagrant"},
-          buildouts:      {"/home/vagrant/vodoo" => "https://github.com/akretion/voodoo.git"}
+          buildouts:      {"/home/vagrant/voodoo" => "https://github.com/akretion/voodoo.git"}
         },
       }
   end
@@ -94,7 +94,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   script = <<-SCRIPT
     /etc/update-motd.d/51-cloudguest
     echo ""
-    /usr/bin/python /home/vagrant/vodoo/bin/start_openerp
+    /usr/bin/python /home/vagrant/voodoo/bin/start_openerp
   SCRIPT
 
   config.vm.provision "shell", inline: script, privileged: false
